@@ -159,20 +159,22 @@ class ChopeMessengeAgent:
             if seat_found_from_website(url):
                 message_content = _write_message(url)
                 self.notify(receiver, message_content)
+            else:
+                print("seat not found")
 
     def on_available_simple(self, receiver, url):
         if seat_found_from_website(url):
             message_content = _write_message(url)
             self.notify(receiver, message_content)
-
+        else:
+            print("seat not found")
 
     def notify(self, receiver, content):
         message = self.__client.messages.create(
             body=content,
             from_=self.__agent,
             to=(phonenumbers.format_number(phonenumbers.parse(receiver, None), phonenumbers.PhoneNumberFormat.E164)))
-
-        logging.info(message)
+        print("message sent: ", message)
 
 
 class ChopeAgent(ABC):
