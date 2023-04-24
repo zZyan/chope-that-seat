@@ -20,6 +20,10 @@ from website_keywords import NOT_AVAILABLE_DIV_ID
 def seat_found_from_website(url) -> bool:
     ''' To check availability on supported website
     '''
+    parsed_url = urlparse(url)
+    if not (parsed_url.scheme and parsed_url.netloc):
+        return False
+
     firefox_options = FirefoxOptions()
     firefox_options.add_argument('-headless')
     driver = webdriver.Firefox(options=firefox_options)
