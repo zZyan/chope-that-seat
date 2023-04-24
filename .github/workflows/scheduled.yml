@@ -41,7 +41,8 @@ jobs:
           python-version: '3.9'
           cache: 'poetry'
       - run: poetry install
-      - run: poetry run pytest
+      # TODO enable after test added
+      # - run: poetry run pytest
 
       - name: Cache Geckodriver
         uses: actions/cache@v3
