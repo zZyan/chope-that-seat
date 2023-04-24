@@ -1,4 +1,4 @@
-smtplib
+secure-smtplib
 phonenumbers
 selenium
 twilio
