@@ -70,7 +70,7 @@ jobs:
             TWILIO_NUMBER:  ${{ secrets.TWILIO_NUMBER }}
             TWILIO_TOKEN:  ${{ secrets.TWILIO_TOKEN }}
             NUMBER: ${{ secrets.YZY_NUMBER }}
-            LIST: ${{ secrets.YZY_LIST }}
+            LIST: ${{ variables.YZY_LIST }}
         run: |
             python main.py -a $TWILIO_NUMBER -i $TWILIO_AUTH_ID -p $TWILIO_TOKEN -u $NUMBER -l $LIST
 
