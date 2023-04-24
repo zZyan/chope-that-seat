@@ -199,7 +199,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--id', type=str, required=False, help='sender id')
     parser.add_argument('-p', '--password', type=str, required=True, help='sender password of chope agent as sender')
     parser.add_argument('-u', '--user', type=str, required=True, help='email address of user as subscriber')
-    parser.add_argument('-l', '--links', type=str, required=True, help='links separted by space to subscribe to')
+    parser.add_argument('-l', '--links', type=str, required=True, help='links separted by "," to subscribe to')
 
     args = parser.parse_args()
     if not _validate_args(args):
@@ -207,5 +207,5 @@ if __name__ == '__main__':
         sys.exit()
 
     agent = _create_agent(args)
-    links = args.links.split(" ")
+    links = args.links.split(",")
     agent.on_available(args.user, links)
