@@ -202,7 +202,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Webpage Monitor Script')
 
     parser.add_argument('-a', '--agent', type=str, required=True, help='email address or phone number of chope agent as sender')
-    parser.add_argument('-i', '--id', type=str, required=False, help='sender id')
+    parser.add_argument('-i', '--id', type=str, required=True, help='sender id')
     parser.add_argument('-p', '--password', type=str, required=True, help='sender password of chope agent as sender')
     parser.add_argument('-u', '--user', type=str, required=True, help='email address of user as subscriber')
     parser.add_argument('-l', '--links', type=str, required=True, help='links separted by "," to subscribe to')
